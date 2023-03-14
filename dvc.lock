@@ -7,8 +7,8 @@ stages:
       md5: f1545c5fe2381ee215ba9c6ca764b3e6
       size: 391
     - path: weather-data/2006-04-10.csv
-      md5: e2cfead3932a4d524458dad61fa94274
-      size: 3992
+      md5: 53e68053da5789ccf46d49c7508b47eb
+      size: 3994
     params:
       params.yaml:
         filter.value: 15
@@ -28,8 +28,8 @@ stages:
       md5: fbb50cc8c77f20f86f612878fe1fb0de
       size: 549
     - path: weather-data/2006-04-10.csv
-      md5: e2cfead3932a4d524458dad61fa94274
-      size: 3992
+      md5: 53e68053da5789ccf46d49c7508b47eb
+      size: 3994
     params:
       params.yaml:
         training.num_rows: 3
