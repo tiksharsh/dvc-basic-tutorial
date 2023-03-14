@@ -7,34 +7,34 @@ stages:
       md5: f1545c5fe2381ee215ba9c6ca764b3e6
       size: 391
     - path: weather-data/2006-04-10.csv
-      md5: 53e68053da5789ccf46d49c7508b47eb
-      size: 3994
+      md5: 4580de9382080f5c073dcd571d251157
+      size: 3969
     params:
       params.yaml:
         filter.value: 15
     outs:
     - path: output/filter
-      md5: 1f30b2cc2badabaa7aa89c824037ac96.dir
-      size: 574
+      md5: 3e83d6a2a7ef3ccd6d1277029a8733f5.dir
+      size: 560
       nfiles: 1
   training:
     cmd: python3 training.py output/filter
     deps:
     - path: output/filter
-      md5: 1f30b2cc2badabaa7aa89c824037ac96.dir
-      size: 574
+      md5: 3e83d6a2a7ef3ccd6d1277029a8733f5.dir
+      size: 560
       nfiles: 1
     - path: training.py
       md5: fbb50cc8c77f20f86f612878fe1fb0de
       size: 549
     - path: weather-data/2006-04-10.csv
-      md5: 53e68053da5789ccf46d49c7508b47eb
-      size: 3994
+      md5: 4580de9382080f5c073dcd571d251157
+      size: 3969
     params:
       params.yaml:
         training.num_rows: 3
     outs:
     - path: output/training
-      md5: 9027b70949339d3ab1a8e3076267939a.dir
-      size: 17
+      md5: ab120c179a12f555e00fa1fedfa6de32.dir
+      size: 16
       nfiles: 1
