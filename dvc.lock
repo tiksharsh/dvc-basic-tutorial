@@ -1,0 +1,40 @@
+schema: '2.0'
+stages:
+  filter:
+    cmd: python3 filter.py
+    deps:
+    - path: filter.py
+      md5: f1545c5fe2381ee215ba9c6ca764b3e6
+      size: 391
+    - path: weather-data/2006-04-10.csv
+      md5: e2cfead3932a4d524458dad61fa94274
+      size: 3992
+    params:
+      params.yaml:
+        filter.value: 15
+    outs:
+    - path: output/filter
+      md5: 1f30b2cc2badabaa7aa89c824037ac96.dir
+      size: 574
+      nfiles: 1
+  training:
+    cmd: python3 training.py output/filter
+    deps:
+    - path: output/filter
+      md5: 1f30b2cc2badabaa7aa89c824037ac96.dir
+      size: 574
+      nfiles: 1
+    - path: training.py
+      md5: fbb50cc8c77f20f86f612878fe1fb0de
+      size: 549
+    - path: weather-data/2006-04-10.csv
+      md5: e2cfead3932a4d524458dad61fa94274
+      size: 3992
+    params:
+      params.yaml:
+        training.num_rows: 3
+    outs:
+    - path: output/training
+      md5: 9027b70949339d3ab1a8e3076267939a.dir
+      size: 17
+      nfiles: 1

@@ -1,0 +1,20 @@
+stages:
+  filter:
+    cmd: python3 filter.py
+    deps:
+    - filter.py
+    - weather-data/2006-04-10.csv
+    params:
+    - filter.value
+    outs:
+    - output/filter
+  training:
+    cmd: python3 training.py output/filter
+    deps:
+    - output/filter
+    - training.py
+    - weather-data/2006-04-10.csv
+    params:
+    - training.num_rows
+    outs:
+    - output/training
